@@ -1,6 +1,6 @@
 from telegram import Bot
 import asyncio
-import time
+# import time
 
 # Replace with your bot token and channel chat ID
 TELEGRAM_TOKEN1 = '7174447911:AAFXtzYPvq6PghPj-7rGBKd1ipIJSJHKVUM'
@@ -13,10 +13,10 @@ async def send_message(CHANNEL_ID,TELEGRAM_TOKEN,message):
         # Create a Bot instance
         bot = Bot(token=TELEGRAM_TOKEN)
         await bot.send_message(chat_id=CHANNEL_ID, text=message)
-        print(message)
+        # print(message)
     except Exception as e:
-        print(f"An error occurred: {e}")
-
+        # print(f"An error occurred: {e}")
+        message="error"
 # Main loop to send a message every 10 seconds
 async def ply(message):
     max_messages = 2  # Stop after 10 messages
@@ -29,7 +29,8 @@ async def ply(message):
             message_count += 1
             # await asyncio.sleep(60*1)  # Wait for 10 seconds before sending the next message
     except KeyboardInterrupt:
-        print("Stopped by user")
+        # print("Stopped by user")
+        message="error"
 
 # Run the main function in an event loop
 if __name__ == "__main__":
